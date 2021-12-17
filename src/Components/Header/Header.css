@@ -1,0 +1,6 @@
+.nav-link.active{
+    color: salmon !important;
+}
+.nav-link{
+    color: rgb(87, 87, 87) !important;
+}
