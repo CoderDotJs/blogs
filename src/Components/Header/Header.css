@@ -4,3 +4,13 @@
 .nav-link{
     color: rgb(87, 87, 87) !important;
 }
+.dropdown-toggle::after{
+    display: none;
+    padding: 0;
+}
+#dropdown-menu-align-end{
+    background-color: transparent;
+    padding: 0;
+    border-radius: 50%;
+    border-color: transparent;
+}

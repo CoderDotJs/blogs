@@ -1,6 +1,5 @@
-import Button from '@restart/ui/esm/Button';
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Dropdown, DropdownButton, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useFirebase from '../../Firebase/useFirebase';
 import './Header.css';
@@ -25,10 +24,24 @@ const Header = () => {
                             <Nav.Link as={NavLink} to="/css">Css</Nav.Link>
                             <Nav.Link as={NavLink} to="/javascript">Javascript</Nav.Link>
                             <Nav.Link as={NavLink} to="/react">React</Nav.Link>
-                            <Nav.Link as={NavLink} to="/about-us">About Us</Nav.Link>
-                            <Nav.Link as={NavLink} to="/contact-us">Contact Us</Nav.Link>
+                            {!user.email && <><Nav.Link as={NavLink} to="/about-us">About Us</Nav.Link>
+                            <Nav.Link as={NavLink} to="/contact-us">Contact Us</Nav.Link></>}
                         </Nav>
-                        {user?.displayName ? <> {user.displayName} <button onClick={logOut}>Logout</button> </> :<NavLink to="/login">Login</NavLink>}
+                        {user?.displayName ? <> 
+                            <DropdownButton align="end" className="text-center" title={<img width="40px" className="rounded img-fluid rounded-circle" src={user.photoURL} alt="user_img" />} id="dropdown-menu-align-end">
+
+                          <img width="80px" className="d-block mx-auto mb-2 rounded img-fluid rounded-circle" src={user.photoURL} alt="" />
+
+                          <h5 className="text-center">{user.displayName}</h5>
+                          <Dropdown.Divider/>
+                          <NavLink to="/dashboard" className="dropdown-item">Dashboard</NavLink>
+                          <NavLink to="/notifications" className="dropdown-item">Notifications</NavLink>
+                          <NavLink to="/payout" className="dropdown-item">Payout</NavLink>
+                          <button type="button" onClick={logOut} className="rounded-0 px-3 btn btn-danger bg-transparent text-black border-black d-block mx-auto my-2">Logout</button>
+                        </DropdownButton>
+                          </> :<NavLink to="/login">Login</NavLink>}
+
+                        
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
