@@ -18,7 +18,7 @@ const ReactPage = () => {
             
 
 
-<section className="my-5">
+<section className="my-5 container mx-auto">
   {/* <div className="container"> */}
   
   <div className="row">

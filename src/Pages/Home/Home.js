@@ -19,6 +19,17 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
+            <Container className="text-center py-5 trusted" fluid>
+                <h1>Trusted by companies of all sizes</h1>
+                <p>
+                    <img src="https://s.udemycdn.com/partner-logos/v4/netflix-dark.svg" alt="" className="trusted-img"/>
+                    <img src="https://s.udemycdn.com/partner-logos/v4/eventbrite-dark.svg" alt="" className="trusted-img"/>
+                    <img src="https://s.udemycdn.com/partner-logos/v4/apple-dark.svg" alt="" className="trusted-img"/>
+                    <img src="https://s.udemycdn.com/partner-logos/v4/box-dark.svg" alt="" className="trusted-img"/>
+                    <img src="https://s.udemycdn.com/partner-logos/v4/volkswagen-dark.svg" alt="" className="trusted-img"/>
+                    
+                </p>
+            </Container>
             <div>
             <Container className="py-5">
                 <Row className="gx-5">
@@ -33,6 +44,7 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
+
         </div>
         </div>
     );

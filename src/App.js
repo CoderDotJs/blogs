@@ -23,7 +23,7 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 function App() {
   return (
     <AuthProvider>
-    <div className="App container mx-auto">
+    <div className="App ">
       <BrowserRouter>
       <Header />
         <Routes>
