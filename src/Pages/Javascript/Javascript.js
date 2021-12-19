@@ -6,7 +6,7 @@ const Javascript = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/category?category=javascript`)
+        fetch(`https://blogs-10.herokuapp.com/category?category=javascript`)
             .then(res => res.json())
             .then(data => {
                 setBlogs(data)
@@ -32,7 +32,7 @@ const Javascript = () => {
                     }
 
                     return (
-                        <div className="col-md-4 gy-5" key={blog.title}><div className="card text-white card-has-bg click-col" 
+                        <div className="col-md-4 gy-5" key={blog._id}><div className="card text-white card-has-bg click-col" 
  style={{"backgroundImage":`url(${blog.image})`}}>
          <img className="card-img d-none" src={blog.image} alt={blog.title}/>
         <div className="card-img-overlay d-flex flex-column">

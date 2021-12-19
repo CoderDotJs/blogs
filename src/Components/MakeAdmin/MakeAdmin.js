@@ -31,7 +31,7 @@ const MakeAdmin = () => {
         setSuccess(null)
         setError(null)
 
-        fetch('http://localhost:5000/make-admin', {
+        fetch('https://blogs-10.herokuapp.com//make-admin', {
             method: 'PUT', 
             headers: {
                 'Content-Type': 'application/json'

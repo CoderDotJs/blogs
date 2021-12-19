@@ -39,7 +39,7 @@ const useFirebase = () => {
 
         const { email } = user;
 
-        fetch(`http://localhost:5000/db-user?email=${email}`)
+        fetch(`https://blogs-10.herokuapp.com/db-user?email=${email}`)
         .then(res => res.json())
         .then(data => {
             setInfo(data);

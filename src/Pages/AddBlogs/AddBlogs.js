@@ -32,7 +32,7 @@ const AddBlogs = () => {
      const handleAddNewServices = (data) =>{
 
  
-         fetch('http://localhost:5000/add-blogs', {
+         fetch('https://blogs-10.herokuapp.com/add-blogs', {
              method: 'POST', 
              headers: {
                  'Content-Type': 'application/json'

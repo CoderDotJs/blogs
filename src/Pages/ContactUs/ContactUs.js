@@ -40,7 +40,7 @@ const ContactUs = () => {
         </form>
     </div>
 </div> 
-<div className="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+<div className="modal fade" id="myModal" tabIndex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
     <div className="modal-dialog">
         <div className="modal-content">
             <div className="modal-header">
