@@ -1,10 +1,10 @@
 import React from 'react';
-import { Navigate, useLocation, useNavigate } from 'react-router-dom';
-import useFirebase from '../../Firebase/useFirebase';
+import {  useLocation, useNavigate } from 'react-router-dom';
+import useAuth from '../../useAuth/useAuth';
 
 
 const Login = () => {
-    const {googleSignIn, user, isLoading, setIsLoading, setUser,error, setError} = useFirebase();
+    const {googleSignIn, user, isLoading, setIsLoading, setUser,error, setError} = useAuth();
     const Navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/dashboard";
@@ -64,7 +64,8 @@ const Login = () => {
                     user.displayName ? 'No need to login' :
                     
                     <>
-                        <button className="btn border-2 btn-primary bg-white text-black d-block mx-auto my-5" onClick={handleLogin}> <img src={process.env.PUBLIC_URL + '/sources/google_logo.png'} className="img-fluid w-75" alt="a" /></button>
+                    <h5 className='text-center my-5'>Login Using Google</h5>
+                        <button style={{'boxShadow': 'none'}} className="btn border-2 btn-primary bg-white  text-black d-block mx-auto my-5" onClick={handleLogin}> <img src="https://pngimg.com/uploads/google/google_PNG19644.png" className="" alt="a" width="200px"/></button>
                     </>
                 }
             </div>

@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Container, Row, Button } from 'react-bootstrap';
 import './Home.css'
 
 const Home = () => {
+
+    const [blogs, setBlogs] = useState([]);
+
+
+    useEffect(() => {
+        fetch(`https://blogs-10.herokuapp.com/all-blogs`)
+            .then(res => res.json())
+            .then(data => {
+                setBlogs(data)
+            })
+    }, [])
+
+
     return (
         <div>
             <Container className="py-5">
