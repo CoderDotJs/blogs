@@ -10,6 +10,7 @@ const useFirebase = () => {
     const [isLoading, setIsLoading] = useState(null)
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
+    const [info, setInfo] = useState({});
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
@@ -26,13 +27,29 @@ const useFirebase = () => {
             if (user !== null) {
               setIsLoading(false)
               setUser(user);
-              console.log(user?.displayName)
+              retrunRole(user);
             } else {
               setIsLoading(false)
               setUser({})
             }
           });
     }, []);
+
+    const retrunRole = (user) =>{
+
+        const { email } = user;
+
+        fetch(`http://localhost:5000/db-user?email=${email}`)
+        .then(res => res.json())
+        .then(data => {
+            setInfo(data);
+        }).catch(err => {
+            console.log(err.message)
+        })
+    }
+
+    // const a = retrunRole(user);
+    // console.log(a)
 
     const logOut = () =>{
         signOut(auth)
@@ -45,7 +62,6 @@ const useFirebase = () => {
     }
 
 
-
     return {
         auth,
         user,
@@ -55,7 +71,9 @@ const useFirebase = () => {
         isLoading,
         setIsLoading,
         setUser,
-        setError
+        setError,
+        info,
+        retrunRole
 
     }
 };

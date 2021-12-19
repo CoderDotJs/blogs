@@ -14,3 +14,6 @@
     border-radius: 50%;
     border-color: transparent;
 }
+.dropdown-menu{
+    min-width: 18rem;
+}
